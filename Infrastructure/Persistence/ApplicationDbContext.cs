@@ -1,6 +1,7 @@
 using Application.Data;
 using Domain.Customers;
 using Domain.Primitives;
+using ErrorOr;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
@@ -37,5 +38,10 @@ public class ApplicationDbContext : DbContext, IApplicationDbContext, IUnitOfWor
         }
 
         return result;
+    }
+
+    public Task<int> Update(Updated updatetoken = default)
+    {
+        throw new NotImplementedException();
     }
 }
